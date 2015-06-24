@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>My-bookmarklets by walidvb</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">My-bookmarklets</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/walidvb/my-bookmarklets" class="btn">View on GitHub</a>
-      <a href="https://github.com/walidvb/my-bookmarklets/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/walidvb/my-bookmarklets/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>My-bookmarklets by walidvb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+  <section class="page-header">
+    <h1 class="project-name">My bookmarklets</h1>
+    <h2 class="project-tagline">
+      A list of bookmarklets i use for development, that have proven quite useful over the years. Testable here.
+    </h2>
+  </section>
 
-    <section class="main-content">
+  <section class="main-content">
+      <p>
+        To install any of these bookmarklet, simply drag a button to your bookmarks bar.
+      </p>
       <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+       Refresh CSS files
+      </h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+      <p>
+        Reload the last version of every CSS file present on the page.
+        <a href="http://calvincorreli.com/2006/02/13/re-recss/">[source]</a>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+      </p>
+      <div class="btn-holder">
+        <a class="btn" href="javascript:void(function()%7Bvar%20i,a,s%3Ba%3Ddocument.getElementsByTagName(%27link%27)%3Bfor(i%3D0%3Bi%3Ca.length%3Bi%2B%2B)%7Bs%3Da%5Bi%5D%3Bif(s.rel.toLowerCase().indexOf(%27stylesheet%27)%3E%3D0%26%26s.href)%20%7Bvar%20h%3Ds.href.replace(/(%26%7C%5C%3F)forceReload%3D%5Cd%2B/,%27%27)%3Bs.href%3Dh%2B(h.indexOf(%27%3F%27)%3E%3D0%3F%27%26%27:%27%3F%27)%2B%27forceReload%3D%27%2B(new%20Date().valueOf())%7D%7D%7D)()%3B"> Refresh CSS</a>
+      </div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+      <h3>debugCSS</h3>
+      <p>Display faulty CSS or HTML.
+        <a href="https://github.com/yahoo/debugCSS">[source]</a>
+      </p>
+      <div class="btn-holder"><a href="javascript:(function(d,i,l)%7Bl%3Dd.getElementById(i)%3Bif(l)%7Bl.parentNode.removeChild(l)%3Breturn%3B%7Dl%3Dd.createElement(%27link%27)%3Bl.id%3Di%3Bl.rel%3D%27stylesheet%27%3Bl.type%3D%27text/css%27%3Bl.href%3D%27//yahoo.github.io/debugCSS/debugCSS.css%27%3Bd.getElementsByTagName(%27head%27)%5B0%5D.appendChild(l)%3B%7D(document,%27debugCSS%27))" class="btn">debugCSS</a></div>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+      <h3>frameIt</h3>
+      <p>Apply background-color to all elements on the page. Very useful to debug sizes.</p>
+      <div class="btn-holder">
+        <a class="btn" href="javascript:(function()%7Bvar%20all%20%3D%20document.querySelectorAll('*')%3Bfor(var%20i%20%3D%200%3B%20i%20%3C%20all.length%3B%20i%2B%2B)%7Bvar%20color%20%3D%20Math.floor(Math.random()*16777215).toString(16)%3Ball%5Bi%5D.style%5B'background-color'%5D%20%3D%20'%23'%2Bcolor%3B%7D%7D)()">frameIt</a>
+      </div>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+      <h3>Visual Event</h3>
+      <p>Lets you see what elements have events attached to them, as well as the callback function attached<a href=""></a></p>
+      <div class="btn-holder"><a href="javascript:(function()%20%7Bvar%20protocol%20%3D%20window.location.protocol%20%3D%3D%3D%20%27file:%27%20%3F%27http:%27%20:%20%27%27%3Bvar%20url%20%3D%20protocol%2B%27//www.sprymedia.co.uk/VisualEvent/VisualEvent_Loader.js%27%3Bif(%20typeof%20VisualEvent!%3D%27undefined%27%20)%20%7Bif%20(%20VisualEvent.instance%20!%3D%3D%20null%20)%20%7BVisualEvent.close()%3B%7Delse%20%7Bnew%20VisualEvent()%3B%7D%7Delse%20%7Bvar%20n%3Ddocument.createElement(%27script%27)%3Bn.setAttribute(%27language%27,%27JavaScript%27)%3Bn.setAttribute(%27src%27,url%2B%27%3Frand%3D%27%2Bnew%20Date().getTime())%3Bdocument.body.appendChild(n)%3B%7D%7D)()%3B" class="btn">Visual Event</a></div>
+      
+      <h3>Breakpoint Tester</h3>
+      <p>Parses your stylesheet to find your @media breakpoints, and displays all variants of your website on one page.
+        <a href="http://breakpointtester.com/">[source]</a>
+      </p>
+      <div class="btn-holder">
+        <a href="javascript:void((function()%7Bfunction%20e(e,t)%7Bvar%20n%3Ddocument.createElement(%27script%27)%3Bn.type%3D%27text/javascript%27%3Bif(n.readyState)%7Bn.onreadystatechange%3Dfunction()%7Bif(n.readyState%3D%3D%27loaded%27%7C%7Cn.readyState%3D%3D%27complete%27)%7Bn.onreadystatechange%3Dnull%3Bt()%7D%7D%7Delse%7Bn.onload%3Dfunction()%7Bt()%7D%7Dn.src%3De%3Bdocument.getElementsByTagName(%27head%27)%5B0%5D.appendChild(n)%7De(%27http://breakpointtester.com/assets/js/breakpoint.js%27,function()%7Bvar%20e%3Ddocument%3Be.write(%27%3C!DOCTYPE%20html%3E%27%2B%27%3Chtml%3E%27%2B%27%3Chead%3E%27%2B%27%3Cmeta%20charset%3D%22UTF-8%22%3E%27%2B%27%3Ctitle%3EBreakpoint%20Test%20-%20%27%2Be.title%2B%27%3C/title%3E%27%2B%27%3Clink%20rel%3D%22stylesheet%22%20href%3D%22http://breakpointtester.com/assets/css/bookmark.css%22%3E%27%2B%27%3Cscript%20src%3D%22http://breakpointtester.com/assets/js/bookmark.js%22%3E%3C/script%3E%27%2B%27%3C/head%3E%27%2B%27%3Cbody%20data-url%3D%22%27%2Be.URL%2B%27%22%3E%27%2B%27%3Cheader%20id%3D%22topHeader%22%20class%3D%22clearfix%22%3E%27%2B%27%3Ca%20href%3D%22%23%22%3E%3C/a%3E%27%2B%27%3C/section%3E%27%2B%27%3Csection%20id%3D%22bpCount%22%3E%27%2B%27%3Cdiv%20id%3D%22count%22%3E00%3C/div%3E%27%2B%27%3Cdiv%20id%3D%22countText%22%3E%3Cspan%3EBREAKPOINTS%20FOUND%3C/span%3E%3C/div%3E%27%2B%27%3C/section%3E%27%2BmqUniqueBP%2B%27%3C/header%3E%27%2B%27%3Csection%20id%3D%22qcWWW%22%3E%27%2B%27%3Cul%20id%3D%22qcWW%22%3E%3C/ul%3E%27%2B%27%3C/section%3E%27%2B%27%3C/body%3E%27%2B%27%3C/html%3E%27)%3B%7D)%3B%7D)())%3B" class="btn">
+          BreakpointTester
+        </a>
+      </div>
+      
 
-<h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+      <h3>perfMap</h3>
+      <p> 
+        <em> 
+          "A bookmarklet and Chrome extension to create a front-end performance heatmap of resources loaded in the browser using the Resource Timing API. A browser with support for the Resource Timing API is required."
+        </em>
+      <a href="https://github.com/zeman/perfmap">[source]</a></p>
+      <div class="btn-holder">
+        <a href="javascript:(function()%7Bvar%20gZeroLeft%20%3D%200%3Bvar%20gZeroTop%20%3D%200%3Bvar%20gWinWidth%20%3D%20window.innerWidth%20%7C%7C%20document.documentElement.clientWidth%3Bfunction%20findImages()%20%7Bvar%20aElems%20%3D%20document.getElementsByTagName('*')%3Bvar%20re%20%3D%20%2Furl%5C((%22%3Fhttp.*%22%3F)%5C)%2Fig%3Bfor%20(%20var%20i%3D0%2C%20len%20%3D%20aElems.length%3B%20i%20%3C%20len%3B%20i%2B%2B%20)%20%7Bvar%20elem%20%3D%20aElems%5Bi%5D%3Bvar%20style%20%3D%20window.getComputedStyle(elem)%3Bvar%20url%20%3D%20elem.src%20%7C%7C%20elem.href%3Bvar%20hasImage%20%3D%200%3Bvar%20fixed%20%3D%200%3Bvar%20body%20%3D%200%3Bre.lastIndex%20%3D%200%3B%20%2F%2F%20reset%20state%20of%20regex%20so%20we%20catch%20repeating%20spritesheet%20elementsif(elem.tagName%20%3D%3D%20'IMG')%20%7BhasImage%20%3D%201%3B%7Dif(style%5B'backgroundImage'%5D)%20%7Bvar%20backgroundImage%20%3D%20style%5B'backgroundImage'%5D%3Bvar%20matches%20%3D%20re.exec(style%5B'backgroundImage'%5D)%3Bif%20(matches%20%26%26%20matches.length%20%3E%201)%7Burl%20%3D%20backgroundImage.substring(4)%3Burl%20%3D%20url.substring(0%2C%20url.length%20-%201)%3Burl%20%3D%20url.replace(%2F%22%2F%2C%20%22%22)%3Burl%20%3D%20url.replace(%2F%22%2F%2C%20%22%22)%3BhasImage%20%3D%201%3Bif(elem.tagName%20%3D%3D%20'BODY')%7Bbody%20%3D%201%3B%7D%7D%7Dif(style%5B'visibility'%5D%20%3D%3D%20%22hidden%22)%20%7BhasImage%20%3D%200%3B%7Dif(hasImage%20%3D%3D%201)%7Bif%20(%20url%20)%20%7Bvar%20entry%20%3D%20performance.getEntriesByName(url)%5B0%5D%3Bif%20(%20entry%20)%20%7Bvar%20xy%20%3D%20getCumulativeOffset(elem%2C%20url)%3Bvar%20wh%20%3D%20elem.getBoundingClientRect()%3Bvar%20width%20%3D%20wh.width%3Bvar%20height%20%3D%20wh.height%3Bif(width%20%3E%2010)%7Bif(height%20%3E%2010)%7BplaceMarker(xy%2C%20width%2C%20height%2C%20entry%2C%20body%2C%20url)%3B%7D%7D%7D%7D%7D%7D%7Dfunction%20placeMarker(xy%2C%20width%2C%20height%2C%20entry%2C%20body%2C%20url)%20%7Bvar%20heat%20%3D%20entry.responseEnd%20%2F%20loaded%3B%2F%2F%20adjust%20size%20of%20fonts%2Fpadding%20based%20on%20width%20of%20overlayif(width%20%3C%20170)%7Bvar%20padding%20%3D%2012%3Bvar%20size%20%3D%2012%3B%7Delse%20if(width%20%3E%20400)%7Bvar%20padding%20%3D%2013%3Bvar%20size%20%3D%2026%3B%7Delse%7Bvar%20padding%20%3D%209%3Bvar%20size%20%3D%2018%3B%7D%2F%2F%20check%20for%20overlay%20that%20matches%20viewport%20and%20assume%20it's%20like%20a%20background%20image%20on%20bodyif(width%20%3D%3D%20document.documentElement.clientWidth)%7Bif(height%20%3E%3D%20document.documentElement.clientHeight)%7Bbody%20%3D%201%3B%7D%7D%2F%2F%20adjust%20opacity%20if%20it's%20the%20body%20element%20and%20position%20label%20top%20rightif(body%20%3D%3D%201)%7Bvar%20opacity%20%3D%200.6%3Bvar%20size%20%3D%2018%3Bvar%20align%20%3D%20%22right%22%3Bvar%20paddingTop%20%3D%2010%3Bvar%20bodyText%20%3D%20%22BODY%20%22%3B%7Delse%7Bvar%20opacity%20%3D%200.925%3Bvar%20align%20%3D%20%22center%22%3Bvar%20paddingTop%20%3D%20(height%2F2)-padding%3Bvar%20bodyText%20%3D%20%22%22%3B%7Dvar%20marker%20%3D%20document.createElement(%22div%22)%3Bmarker.className%20%3D%20%22perfmap%22%3Bmarker.setAttribute(%22data-ms%22%2C%20parseInt(entry.responseEnd))%3Bmarker.setAttribute(%22data-body%22%2C%20body)%3Bmarker.setAttribute(%22dir%22%2C%20%22ltr%22)%3B%20%2F%2F%20Force%20LTR%20display%20even%20if%20injected%20on%20an%20RTL%20pagemarker.style.cssText%20%3D%20%22position%3Aabsolute%3B%20transition%3A%200.5s%20ease-in-out%3B%20box-sizing%3A%20border-box%3B%20color%3A%20%23fff%3B%20padding-left%3A10px%3B%20padding-right%3A10px%3B%20line-height%3A14px%3B%20font-size%3A%20%22%20%2B%20size%20%2B%20%22px%3B%20font-weight%3A800%3B%20font-family%3A%5C%22Helvetica%20Neue%5C%22%2Csans-serif%3B%20text-align%3A%22%20%2B%20align%20%2B%20%22%3B%20opacity%3A%20%22%20%2B%20opacity%20%2B%20%22%3B%20%22%20%2B%20heatmap(heat)%20%2B%20%22%20top%3A%20%22%20%2B%20xy.top%20%2B%20%22px%3B%20left%3A%20%22%20%2B%20xy.left%20%2B%20%22px%3B%20width%3A%20%22%20%2B%20width%20%2B%20%22px%3B%20height%3A%22%20%2B%20height%20%2B%20%22px%3B%20padding-top%3A%22%20%2B%20paddingTop%20%2B%20%22px%3B%20z-index%3A%204000%3B%22%3Bif(width%20%3E%2050)%7Bif(height%20%3E%2015%20)%7Bmarker.innerHTML%20%3D%20bodyText%20%2B%20parseInt(entry.responseEnd)%20%2B%20%22ms%20(%22%20%2B%20parseInt(entry.duration)%20%2B%20%22ms)%22%3B%7D%7Ddocument.body.appendChild(marker)%3B%7Dfunction%20heatmap(heat)%20%7Bif%20(%20heat%20%3C%200.16%20)%20%7Breturn%20%22background%3A%20%231a9850%3B%22%7Delse%20if%20(%20heat%20%3C%200.32%20)%20%7Breturn%20%22background%3A%20%2366bd63%3B%22%7Delse%20if%20(%20heat%20%3C%200.48%20)%20%7Breturn%20%22background%3A%20%23a6d96a%3B%22%7Delse%20if%20(%20heat%20%3C%200.64%20)%20%7Breturn%20%22background%3A%20%23fdae61%3B%22%7Delse%20if%20(%20heat%20%3C%200.8%20)%20%7Breturn%20%22background%3A%20%23f46d43%3B%22%7Delse%7Breturn%20%22background%3A%20%23d73027%3B%22%7D%7Dfunction%20getCumulativeOffset(obj%2C%20url)%20%7Bvar%20left%2C%20top%3Bleft%20%3D%20top%20%3D%200%3Bif%20(obj.offsetParent)%20%7Bdo%20%7Bleft%20%2B%3D%20obj.offsetLeft%3Btop%20%20%2B%3D%20obj.offsetTop%3B%7D%20while%20(obj%20%3D%20obj.offsetParent)%3B%7Dif%20(%200%20%3D%3D%20top%20)%20%7Bleft%20%2B%3D%20gZeroLeft%3Btop%20%2B%3D%20gZeroTop%3B%7Dreturn%20%7Bleft%3A%20left%2Ctop%3A%20top%2C%7D%3B%7D%2F%2F%20give%20visual%20feedback%20asapvar%20loading%20%3D%20document.createElement(%22div%22)%3Bloading.id%20%3D%20%22perfmap-loading%22%3Bloading.innerHTML%20%3D%20%22Creating%20PerfMap%22%3Bloading.style.cssText%20%3D%20%22position%3Aabsolute%3B%20z-index%3A6000%3B%20left%3A40%25%3B%20top%3A45%25%3B%20background-color%3A%23000%3B%20color%3A%23fff%3B%20padding%3A20px%2030px%3B%20font-family%3A%5C%22Helvetica%20Neue%5C%22%2Csans-serif%3B%20font-size%3A24px%3B%20font-weight%3A800%3Bborder%3A2px%20solid%20white%3B%22%3Bdocument.body.appendChild(loading)%3B%2F%2F%20get%20full%20page%20load%20time%20to%20calculate%20heatmap%20maxvar%20loaded%20%3D%20performance.timing.loadEventEnd%20-%20performance.timing.navigationStart%3B%2F%2F%20backendvar%20backend%20%3D%20performance.timing.responseEnd%20-%20performance.timing.navigationStart%3Bvar%20backendLeft%20%3D%20(backend%20%2F%20loaded)*100%3B%2F%2F%20first%20paint%20in%20chrome%20from%20https%3A%2F%2Fgithub.com%2Faddyosmani%2Ftiming.jsvar%20hasFirstPaint%20%3D%200%3Bif%20(window.chrome%20%26%26%20window.chrome.loadTimes)%20%7Bvar%20paint%20%3D%20window.chrome.loadTimes().firstPaintTime%20*%201000%3Bvar%20firstPaint%20%3D%20paint%20-%20(window.chrome.loadTimes().startLoadTime*1000)%3Bvar%20firstPaintLeft%20%3D%20(firstPaint%20%2F%20loaded)*100%3BhasFirstPaint%20%3D%201%3B%7D%2F%2F%20remove%20any%20exisiting%20%22perfmap%22%20divs%20on%20second%20clickvar%20elements%20%3D%20document.getElementsByClassName(%22perfmap%22)%3Bwhile(elements.length%20%3E%200)%7Belements%5B0%5D.parentNode.removeChild(elements%5B0%5D)%3B%7D%2F%2F%20build%20bottom%20legendvar%20perfmap%20%3D%20document.createElement(%22div%22)%3Bperfmap.id%20%3D%20%22perfmap%22%3Bvar%20legend%20%3D%20%22%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%231a9850%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%2366bd63%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%23a6d96a%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%23fdae61%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%23f46d43%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'width%3A16.666666667%25%3B%20height%3A%2050px%3B%20float%3Aleft%3B%20background-color%3A%23d73027%3B'%3E%3C%2Fdiv%3E%3Cdiv%20style%3D'position%3Aabsolute%3B%20z-index%3A2%3B%20right%3A0px%3B%20padding-top%3A5px%3B%20padding-right%3A10px%3Bheight%3A100%25%3Bcolor%3A%23fff%3B'%3EFully%20Loaded%20%22%20%2B%20parseInt(loaded)%20%2B%20%22ms%3C%2Fdiv%3E%3Cdiv%20id%3D'perfmap-timeline'%20style%3D'position%3Aabsolute%3B%20z-index%3A4%3B%20left%3A-100px%3B%20border-left%3A2px%20solid%20white%3Bheight%3A100%25%3B'%3E%3C%2Fdiv%3E%22%3Bif(hasFirstPaint%20%3D%3D%201)%7Blegend%20%2B%3D%20%22%3Cdiv%20style%3D'position%3Aabsolute%3B%20z-index%3A3%3B%20left%3A%22%20%2B%20firstPaintLeft%20%2B%20%22%25%3B%20padding-top%3A5px%3B%20border-left%3A2px%20solid%20white%3Bpadding-left%3A5px%3Bheight%3A100%25%3Bcolor%3A%23fff%3B'%3EFirst%20Paint%20%22%20%2B%20parseInt(firstPaint)%20%2B%20%22ms%3C%2Fdiv%3E%3C%2Fdiv%3E%22%3B%7Dperfmap.style.cssText%20%3D%20%22position%3A%20fixed%3B%20width%3A100%25%3B%20bottom%3A0%3B%20left%3A0%3B%20z-index%3A5000%3B%20height%3A%2025px%3B%20color%3A%23fff%3B%20font-family%3A%5C%22Helvetica%20Neue%5C%22%2Csans-serif%3B%20font-size%3A14px%3B%20font-weight%3A800%3B%20line-height%3A14px%3B%22%3Bperfmap.innerHTML%20%3D%20legend%3Bdocument.body.appendChild(perfmap)%3B%2F%2F%20build%20heatmapfindImages()%3B%2F%2F%20remove%20loading%20messageloading.remove()%3B%2F%2F%20mouse%20events%20to%20move%20timeline%20around%20on%20hovervar%20elements%20%3D%20document.getElementsByClassName(%22perfmap%22)%3Bvar%20timeline%20%3D%20document.getElementById('perfmap-timeline')%3Bfor%20(%20var%20i%3D0%2C%20len%20%3D%20elements.length%3B%20i%20%3C%20len%3B%20i%2B%2B%20)%20%7Belements%5Bi%5D.onmouseover%20%3D%20function()%7Bvar%20timelineLeft%20%3D%20document.documentElement.clientWidth%20*%20(this.dataset.ms%20%2F%20loaded)%3Bif(this.dataset.body%20!%3D%20%221%22)%7Bthis.style.opacity%20%3D%201%3B%7Dtimeline.style.cssText%20%3D%20%22opacity%3A1%3B%20transition%3A%200.5s%20ease-in-out%3B%20transform%3A%20translate(%22%2B%20parseInt(timelineLeft)%20%2B%20%22px%2C0)%3B%20position%3Aabsolute%3B%20z-index%3A4%3B%20border-left%3A2px%20solid%20white%3B%20height%3A100%25%3B%22%3B%7Delements%5Bi%5D.onmouseout%20%3D%20function()%7Bvar%20timelineLeft%20%3D%20document.documentElement.clientWidth%20*%20(this.dataset.ms%20%2F%20loaded)%3Bif(this.dataset.body%20!%3D%20%221%22)%7Bthis.style.opacity%20%3D%200.925%3B%7Dtimeline.style.cssText%20%3D%20%22opacity%3A0%3B%20transition%3A%200.5s%20ease-in-out%3B%20transform%3A%20translate(%22%2B%20parseInt(timelineLeft)%20%2B%20%22px%2C0)%3B%20position%3Aabsolute%3B%20z-index%3A4%3B%20border-left%3A2px%20solid%20white%3B%20height%3A100%25%3B%22%3B%7D%7D%7D)()" class="btn">
+          perfMap  
+        </a>
+      </div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+      <h3>AssetAddr</h3>
+      <p>
+        WIP: A tool to quickly add any library available on cdnjs on the current page. Very useful to quickly test libraries before adding them to your project.
+        <a href="https://github.com/walidvb/asstadr">
+          [source]
+        </a>
+      </p>
+      <div class="btn-holder">
+        <a src="see?" href="javascript:(function()%7Bfunction%20callback()%7B(function(%24)%7Bvar%20jQuery%3D%24%3B%24(function()%7Bfunction%20a(a%2Cb)%7Bthis.id%3Db%2Cthis.name%3Da.name%2Cthis.latest%3Da.latest%2Cthis.displayed%3D!1%7Dfunction%20g()%7Bc%3D%24('%3Cdiv%20class%3D%22w-wrapper%22%3E')%2Ce%3D%24('%3Cinput%20type%3D%22text%22%20name%3D%22search%22%20placeholder%3D%22type%20in%20a%20library%22%3E')%2Cc.appendTo(%24(%22body%22))%2Cc.append(e)%2Cc.append(%24('%3Cdiv%20class%3D%22close%22%3EX%3C%2Fdiv%3E'))%2Cd%3D%24('%3Cul%20id%3D%22libraries%22%3E').text(%22loading%22)%2Cc.append(d)%2Ce.focus()%2Ce.on(%22keyup%22%2Cfunction()%7Bvar%20b%3D%24(this).val()%3Bif(b.length%3E%3D1)%7Bfor(var%20c%3D0%3Bc%3Cf.length%3Bc%2B%2B)f%5Bc%5D.display(f%5Bc%5D.name.toLowerCase().search(b.toLowerCase())%3E-1)%3Bh()%7Delse%7Bfor(var%20c%3D0%3Bc%3Cf.length%3Bc%2B%2B)f%5Bc%5D.display(!0)%3Bh()%7D%7D)%2C%24(document).on(%22click%22%2C%22.w-wrapper%20.add-library%22%2Cfunction(a)%7Bvar%20b%3D%24(a.target).parents(%22%5Bdata-id%5D%22).data(%22id%22)%3Bf%5Bb%5D.addLatestToPage()%2Ca.stopPropagation()%7D)%2C%24(document).on(%22click%22%2C%22.w-wrapper%20.header%22%2Cfunction(a)%7Bvar%20b%3D%24(a.target).parents(%22%5Bdata-id%5D%22).data(%22id%22)%3Bf%5Bb%5D.toggleMore()%7D)%2C%24(document).on(%22click%22%2C%22.w-wrapper%20.add-file%22%2Cfunction(a)%7Bvar%20b%3D%24(a.target).parents(%22%5Bdata-id%5D%22).data(%22id%22)%3B%24(a.target).animate(%7Bopacity%3A0%7D)%2Cf%5Bb%5D.addFile(%24(a.target).data(%22index%22))%7D)%2C%24(document).on(%22click%22%2C%22.w-wrapper%20.done%22%2Cfunction()%7Bc.animate(%7Bopacity%3A0%7D%2Cfunction()%7Bc.remove()%7D)%7D)%2C%24(document).on(%22click%22%2Cfunction(a)%7Bvar%20b%3D%24(a.target).parents(%22.w-wrapper%22)%3B(b.length%3C1%7C%7C%24(a.target).hasClass(%22close%22))%26%26c.remove()%7D)%7Dfunction%20h()%7Bfor(var%20a%3D%24('%3Cul%20id%3D%22%23library%22%3E')%2Cb%3D0%3Bb%3Cf.length%3Bb%2B%2B)f%5Bb%5D.displayed%26%26a.append(f%5Bb%5D.%24)%3Bd.html(a)%7Dfunction%20i(a)%7Bif(console.log(%22loaded%20%22%2Ca)%2C%2F(js)%24%2F.test(a))%7Bvar%20b%3Ddocument.createElement(%22script%22)%3Bb.setAttribute(%22type%22%2C%22text%2Fjavascript%22)%2Cb.setAttribute(%22src%22%2Ca)%7Delse%20if(%2F(css)%24%2F.test(a))%7Bvar%20b%3Ddocument.createElement(%22link%22)%3Bb.setAttribute(%22rel%22%2C%22stylesheet%22)%2Cb.setAttribute(%22type%22%2C%22text%2Fcss%22)%2Cb.setAttribute(%22href%22%2Ca)%7D%22undefined%22!%3Dtypeof%20b%3Fdocument.getElementsByTagName(%22head%22)%5B0%5D.appendChild(b)%3Aconsole.log(%22an%20error%20has%20occured%20when%20trying%20to%20load%22%2Ba)%7Da.prototype.fetchMore%3Dfunction()%7Bvar%20a%3Dthis%3B%24.get(%22http%3A%2F%2Fapi.cdnjs.com%2Flibraries%3Fsearch%3D%22%2Bthis.name%2B%22%26fields%3Dversion%2Cdescription%2Cassets%2Chomepage%22%2Cfunction(b)%7Ba.more%3D%24('%3Cdiv%20class%3D%22more%22%3E')%2Ca.proj%3Db.results%5B0%5D%2Ca.more.append(%24('%3Cdiv%20class%3D%22desc%22%3E').text(a.proj.description))%3Bvar%20c%3D%24('%3Cdiv%20class%3D%22sidebar%22%3E')%3Ba.proj.homepage%26%26c.append(%24('%3Cdiv%20class%3D%22homepage%22%3E%3Cstrong%3Ehomepage%3A%3C%2Fstrong%3E%3Ca%20href%3D%22'%2Ba.proj.homepage%2B'%22%20target%3D%22_blank%22%3E'%2Ba.proj.homepage%2B%22%3C%2Fa%3E%3C%2Fdiv%3E%22))%3Bvar%20d%3D%24('%3Cdiv%20class%3D%22files%22%3E')%3Bd.append(%24('%3Cdiv%20class%3D%22files-header%22%3EFiles%3A%3C%2Fdiv%3E'))%3Bfor(var%20e%3Da.proj.assets%5B0%5D.files%2Cf%3D0%3Bf%3Ce.length%3Bf%2B%2B)file%3De%5Bf%5D%2Cd.append(%24('%3Ca%20class%3D%22file%22%3E%3Cdiv%20data-index%3D%22'%2Bf%2B'%22%20class%3D%22add%20add-file%20button%22%3E%2B%3C%2Fdiv%3E'%2Bfile.name%2B%22%3C%2Fa%3E%22))%3Bc.append(d)%2Ca.more.append(c)%2Ca.%24.append(a.more)%2Ca.toggleMore()%7D)%7D%2Ca.prototype.addFile%3Dfunction(a)%7Bvar%20b%3Dthis.proj.assets%5B0%5D.files%5Ba%5D%2Cc%3D%22http%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2F%22%2Bthis.name%2B%22%2F%22%2Bthis.proj.assets%5B0%5D.version%2B%22%2F%22%2Bb.name%3Bthis.addToPage(c)%7D%2Ca.prototype.toggleMore%3Dfunction()%7Bthis.moreDisplayed%3F(this.moreDisplayed%3D!1%2Cthis.more.slideUp(%22fast%22))%3Athis.more%3F(this.moreDisplayed%3D!0%2Cthis.more.slideDown(%22fast%22))%3Athis.fetchMore()%7D%2Ca.prototype.addToPage%3Dfunction(a)%7Bi(a%2C%22js%22)%2C%24(%22%23notifier%22).html(%22Added%20%22%2Bthis.name%2B%22%20to%20the%20page!%22)%2Cthis.%24.addClass(%22added%22)%7D%2Ca.prototype.addLatestToPage%3Dfunction()%7Bthis.addToPage(this.latest)%2Cthis.%24.find(%22.add-library%22).remove()%7D%2Ca.prototype.display%3Dfunction(a)%7Breturn%20a%3F(this.%24%7C%7C(this.%24%3D%24('%3Cli%20data-id%3D%22'%2Bthis.id%2B'%22%20class%3D%22lib%22%3E%3C%2Fli%3E').append(%24(%22%3Cdiv%20class%3D'header'%3E%3Cdiv%20class%3D'name'%3E%22%2Bthis.name%2B%22%3C%2Fdiv%3E%3Ca%20class%3D'more-info'%3Emore%3C%2Fa%3E%3Ca%20class%3D'add%20add-library'%3Eadd%20latest%3C%2Fa%3E%3C%2Fdiv%3E%22)))%2Cthis.displayed%3D!0%2Cvoid%200)%3A(this.displayed%3D!1%2Cvoid%200)%7D%3Bvar%20c%2Cd%2Ce%2Cf%2Cb%3D%22http%3A%2F%2Fapi.cdnjs.com%2Flibraries%22%3B%24.get(b%2Cfunction(b)%7Bf%3D%5B%5D%3Bfor(var%20c%3D0%3Bc%3Cb.results.length%3Bc%2B%2B)f.push(new%20a(b.results%5Bc%5D%2Cc))%2Cf%5Bc%5D.display(!0)%3Bh()%7D)%2Cg()%3Bvar%20j%3D%22.w-wrapper%7Bfont-family%3AHelvetica%20Neue%3Bfont-size%3A16px%3Bmax-width%3A600px%3Bmargin%3Aauto%3Bposition%3Afixed%3Bleft%3A0%3Bright%3A0%3Btop%3A0%3Bz-index%3A1000%3Bbackground-color%3Awhite%3B-webkit-animation%3AwSlideTopIn%200.3s%20ease-out%3Banimation%3AwSlideTopIn%200.3s%20ease-out%7D.w-wrapper%20*%7Bbox-sizing%3Aborder-box%7D.w-wrapper%20a%7Bcolor%3Ablack%7D.w-wrapper%20ul%7Bmargin%3A0%3B-webkit-padding-start%3A0%7D.w-wrapper%20.close%7Bwidth%3A30px%3Bdisplay%3Ainline-block%3Btext-align%3Acenter%3Bcursor%3Apointer%7D.w-wrapper%20input%7Bwidth%3Acalc(100%25%20-%2030px)%3Bfont-size%3A18px%3Bpadding%3A8px%205px%7D.w-wrapper%20%23libraries%7Bmax-height%3A500px%3Boverflow%3Aauto%7D.w-wrapper%20.lib%7Blist-style%3Anone%3Bwidth%3A100%25%3Bborder-bottom%3A1px%20%230074D9%20solid%7D.w-wrapper%20.lib%3Abefore%2C.w-wrapper%20.lib%3Aafter%7Bcontent%3Anone%7D.w-wrapper%20.lib.added%20.header%7Bbackground-color%3A%233D9970%7D.w-wrapper%20.header%7Bpadding%3A5px%3Bbackground-color%3A%23001f3f%3Bcolor%3Awhite%3Bcursor%3Apointer%7D.w-wrapper%20.header%3Ahover%7Bbackground-color%3A%2300060c%7D.w-wrapper%20.name%7Bdisplay%3Ainline-block%7D.w-wrapper%20.add-library%2C.w-wrapper%20.add%7Bbackground-color%3A%232ECC40%7D.w-wrapper%20.add%7Bpadding%3A3px%206px%3Bmargin-right%3A5px%7D.w-wrapper%20.more-info%7Bbackground-color%3A%237FDBFF%7D.w-wrapper%20.button%2C.w-wrapper%20.add-library%2C.w-wrapper%20.more-info%7Btext-transform%3Auppercase%3Bdisplay%3Ainline-block%3Bfont-size%3A0.8em%3Bfont-weight%3Abold%3Bcursor%3Apointer%7D.w-wrapper%20.add-library%2C.w-wrapper%20.more-info%7Bpadding%3A0px%2010px%3Bfloat%3Aright%3Bmargin-right%3A5px%7D.w-wrapper%20.more%7Bdisplay%3Anone%3Bpadding%3A5px%3Bbackground%3A%230074D9%7D.w-wrapper%20.desc%7Bdisplay%3Ainline-block%3Bvertical-align%3Atop%3Bwidth%3A57%25%7D.w-wrapper%20.sidebar%7Bdisplay%3Ainline-block%3Bwidth%3A40%25%7D.w-wrapper%20.homepage%7Bmargin-bottom%3A10px%7D.w-wrapper%20.homepage%20a%7Bcolor%3A%237FDBFF%7D.w-wrapper%20.homepage%20strong%7Bdisplay%3Ablock%3Bcolor%3Ablack%7D.w-wrapper%20.files%7Bbackground%3A%23AAAAAA%3Bmax-height%3A350px%3Boverflow%3Aauto%7D.w-wrapper%20.files%20.files-header%7Bbackground%3A%23909090%3Bpadding%3A5px%7D.w-wrapper%20.files%20.file%7Bdisplay%3Ablock%3Bpadding%3A5px%205px%7D%40-webkit-keyframes%20wSlideTopIn%7Bfrom%7B-webkit-transform%3AtranslateY(-100%25)%3Btransform%3AtranslateY(-100%25)%7Dto%7B-webkit-transform%3AtranslateY(0%25)%3Btransform%3AtranslateY(0%25)%7D%7D%40keyframes%20wSlideTopIn%7Bfrom%7B-webkit-transform%3AtranslateY(-100%25)%3Btransform%3AtranslateY(-100%25)%7Dto%7B-webkit-transform%3AtranslateY(0%25)%3Btransform%3AtranslateY(0%25)%7D%7D%22%2Ck%3Ddocument.createElement(%22style%22)%3Bk.innerHTML%3Dj%2Cdocument.querySelector(%22head%22).appendChild(k)%7D)%7D)(jQuery.noConflict(true))%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()" class="btn">
+          AssetAddr    
+        </a>
+      </div>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-
+      <h3>Subtle Patterns</h3>
+      <p>
+        Quickly choose and live test backgrounds on your website, choosing from an extended list of patterns.
+        <a href="http://subtlepatterns.com/">
+          [source]
+        </a>
+      </p>
+      <div class="btn-holder">
+      <a href="" class="btn">SubtlePatterns</a>
+      </div>
       <footer class="site-footer">
+        <p>
+          If you are the author of any of these bookmarklet, and i haven't mentioned you as a source, please contact me and i will address this.
+        </p>
         <span class="site-footer-owner"><a href="https://github.com/walidvb/my-bookmarklets">My-bookmarklets</a> is maintained by <a href="https://github.com/walidvb">walidvb</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
@@ -59,7 +107,7 @@ $ git checkout gh-pages
 
     </section>
 
-  
+
   </body>
-</html>
+  </html>
 

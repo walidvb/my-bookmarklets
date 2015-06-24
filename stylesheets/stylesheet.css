@@ -15,24 +15,26 @@ a {
   a:hover {
     text-decoration: underline; }
 
+.btn-holder{
+  text-align: center;
+}
 .btn {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  cursor: move;
+  display: inline;
+  margin: 0 auto 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
-  .btn + .btn {
-    margin-left: 1rem; }
 
 .btn:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3); }
 
 @media screen and (min-width: 64em) {
   .btn {
@@ -104,13 +106,14 @@ a {
   .project-tagline {
     font-size: 1rem; } }
 
-.main-content :first-child {
+.main-content :first-child, .main-content p {
   margin-top: 0; }
+
 .main-content img {
   max-width: 100%; }
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   font-weight: normal;
   color: #159957; }
 .main-content p {
